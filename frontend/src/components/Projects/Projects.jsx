@@ -301,23 +301,10 @@ const projects = [
     description:
       "Command-line bus ticketing system in C with seat booking, cancellation, and file-based persistence - the project that started it all.",
     githubUrl: "https://github.com/SamniHasnath/Project-Learning-03--BusReservationSystem_C-Project.git",
-    demoUrl: "#",
-  },
-  {
-    id: 20,
-    title: "Notes App",
-    category: "Full Stack",
-    type: "Personal",
-    tags: ["NODE.JS", "EXPRESS", "POSTGRESQL"],
-    emoji: "📝",
-    description:
-      "Notes application with a Node.js/PostgreSQL backend and a responsive frontend, supporting persistent database storage as well as offline browser saving.",
-    githubUrl: "https://github.com/SamniHasnath/Project_Learning-16-Notes_App",
-    demoUrl: "#",
-  },
-  {
+      },
+    {
     id: 21,
-    title: "Elder Management System",
+    title: "Elder Care Monitoring System",
     category: "Full Stack",
     type: "Group",
     tags: ["REACT", "NODE.JS", "EXPRESS", "POSTGRESQL"],
