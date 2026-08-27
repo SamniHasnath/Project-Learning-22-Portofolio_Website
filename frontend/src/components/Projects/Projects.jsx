@@ -100,7 +100,7 @@ const projects = [
     tags: ['REACT', 'TAILWIND', 'TMDB API'],
     emoji: '🎬',
     description: 'Movie database app with real-time search, category filtering, and detailed media pages powered by the TMDB API.',
-    githubUrl: 'https://github.com/SamniHasnath/movie-website',
+    githubUrl: 'https://github.com/SamniHasnath/Project_Learning-25-Movie_Website.git',
     demoUrl: '#',
   },
   {
@@ -111,7 +111,7 @@ const projects = [
     tags: ['REACT', 'OPENWEATHER API', 'CSS'],
     emoji: '⛅',
     description: 'Clean weather forecasting app with city search, current conditions, and a dynamic UI that adapts to weather data.',
-    githubUrl: 'https://github.com/SamniHasnath/weather-app',
+    githubUrl: 'https://github.com/SamniHasnath/Project_Learning-11-Weather-App.git',
     demoUrl: '#',
   },
    
