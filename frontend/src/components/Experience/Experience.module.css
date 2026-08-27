@@ -1,0 +1,73 @@
+.section {
+  padding: 100px 24px;
+  background: var(--c-bg);
+  border-top: 1px solid var(--c-border);
+}
+
+.inner {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.eyebrow {
+  color: var(--c-accent);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+}
+
+.title {
+  font-size: clamp(28px, 5vw, 54px);
+  font-weight: 800;
+  color: var(--c-text);
+}
+
+.tabs {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 64px;
+}
+
+.tab {
+  padding: 10px 20px;
+  border-radius: 999px;
+  border: 1px solid var(--c-border);
+  background: var(--c-card);
+  color: var(--c-text-2);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  transition: border-color 0.25s cubic-bezier(0.16, 1, 0.3, 1),
+    background-color 0.25s cubic-bezier(0.16, 1, 0.3, 1),
+    color 0.25s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  white-space: nowrap;
+}
+
+.tab:hover,
+.tab:focus-visible {
+  border-color: var(--c-border-hover);
+  transform: translateY(-1px);
+}
+
+.tabActive {
+  background: var(--c-accent);
+  color: #fff;
+  border-color: var(--c-accent);
+}
+
+.tabActive:hover,
+.tabActive:focus-visible {
+  border-color: var(--c-accent);
+  transform: none;
+}

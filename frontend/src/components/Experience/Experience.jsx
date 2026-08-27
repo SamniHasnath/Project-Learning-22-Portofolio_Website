@@ -3,6 +3,7 @@ import {
   School, BookOpen, GraduationCap, Building2, Code2,
   Award, Target, Users, Palette, PenTool, FileText, ChevronDown,
 } from 'lucide-react';
+import styles from './Experience.module.css';
 
 const academicTimeline = [
   {
@@ -156,48 +157,27 @@ export default function Experience() {
   const active = TABS.find(t => t.key === activeTab);
 
   return (
-    <section id="education" className="sec" style={{
-      padding: '100px 24px', background: 'var(--c-bg)',
-      borderTop: '1px solid var(--c-border)',
-    }}>
-      <div className="reveal" style={{ maxWidth: '800px', margin: '0 auto' }}>
+    <section id="education" className={`sec ${styles.section}`}>
+      <div className={`reveal ${styles.inner}`}>
         {/* Header */}
-        <div style={{ textAlign: 'center', marginBottom: '40px' }}>
-          <p style={{
-            color: 'var(--c-accent)', fontSize: '12px', fontWeight: '700',
-            letterSpacing: '4px', textTransform: 'uppercase', marginBottom: '16px',
-          }}>
+        <div className={styles.header}>
+          <p className={styles.eyebrow}>
             My Background
           </p>
-          <h2 style={{
-            fontSize: 'clamp(28px, 5vw, 54px)', fontWeight: '800', color: 'var(--c-text)',
-          }}>
+          <h2 className={styles.title}>
             {active.label}
           </h2>
         </div>
 
         {/* Tabs */}
-        <div style={{
-          display: 'flex', justifyContent: 'center', flexWrap: 'wrap', gap: '8px',
-          marginBottom: '64px',
-        }}>
+        <div className={styles.tabs}>
           {TABS.map(({ key, label }) => {
             const isActive = activeTab === key;
             return (
               <button
                 key={key}
                 onClick={() => setActiveTab(key)}
-                style={{
-                  padding: '10px 20px', borderRadius: '999px',
-                  border: '1px solid var(--c-border)',
-                  background: isActive ? 'var(--c-accent)' : 'var(--c-card)',
-                  color: isActive ? '#fff' : 'var(--c-text-2)',
-                  fontSize: '13px', fontWeight: '700',
-                  letterSpacing: '0.5px', cursor: 'pointer',
-                  transition: 'all 0.2s', whiteSpace: 'nowrap',
-                }}
-                onMouseEnter={e => { if (!isActive) e.currentTarget.style.borderColor = 'var(--c-border-hover)'; }}
-                onMouseLeave={e => { if (!isActive) e.currentTarget.style.borderColor = 'var(--c-border)'; }}
+                className={`${styles.tab}${isActive ? ` ${styles.tabActive}` : ''}`}
               >
                 {label}
               </button>
