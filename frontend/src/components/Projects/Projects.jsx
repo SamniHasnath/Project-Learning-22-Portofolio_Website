@@ -197,7 +197,7 @@ const projects = [
     demoUrl: "#",
   },
   {
-    id: 6,
+    id: 4,
     title: "Movie Website",
     category: "Full Stack",
     type: "Personal",
@@ -210,7 +210,7 @@ const projects = [
     demoUrl: "#",
   },
   {
-    id: 7,
+    id: 5,
     title: "Weather App",
     category: "Full Stack",
     type: "Personal",
@@ -224,7 +224,7 @@ const projects = [
   },
 
   {
-    id: 15,
+    id: 6,
     title: "Sales Analysis Dashboard",
     category: "Data Science",
     type: "Personal",
@@ -235,7 +235,7 @@ const projects = [
     githubUrl: "https://github.com/SamniHasnath/sales-analysis-dashboard",
   },
   {
-    id: 16,
+    id: 7,
     title: "HR Analytics Dashboard",
     category: "Data Science",
     type: "Group",
@@ -247,7 +247,7 @@ const projects = [
    
   },
   {
-    id: 17,
+    id: 8,
     title: "Jarvis AI Assistant",
     category: "AI/ML",
     type: "Personal",
@@ -258,7 +258,7 @@ const projects = [
     githubUrl: "https://github.com/SamniHasnath/Python_Project_Learning-24-Jarvis-Web-Application.git",
       },
   {
-    id: 18,
+    id: 9,
     title: "ShePulse - Women's Wellness App",
     category: "UI/UX",
     type: "Group",
@@ -268,7 +268,7 @@ const projects = [
       "UI specification document for ShePulse, a women's wellness app - covering wireframes, interactive prototypes, and a complete design system to guide development.",
      },
   {
-    id: 12,
+    id: 10,
     title: "Pipelinehub",
     category: "Full Stack",
     type: "Personal",
@@ -280,7 +280,7 @@ const projects = [
     demoUrl: "#",
   },
   {
-    id: 13,
+    id: 11,
     title: "Sports Management System",
     category: "Full Stack",
     type: "Group",
@@ -292,7 +292,7 @@ const projects = [
     demoUrl: "#",
   },
   {
-    id: 14,
+    id: 12,
     title: "Bus Reservation System",
     category: "Other",
     type: "Personal",
@@ -303,33 +303,20 @@ const projects = [
     githubUrl: "https://github.com/SamniHasnath/Project-Learning-03--BusReservationSystem_C-Project.git",
       },
     {
-    id: 21,
+    id: 13,
     title: "Elder Care Monitoring System",
     category: "Full Stack",
     type: "Group",
     tags: ["REACT", "NODE.JS", "EXPRESS", "POSTGRESQL"],
     emoji: "🏥",
     description:
-      "Full-stack Elder Management System for managing elder care records with CRUD operations, featuring a simple, user-friendly dashboard.",
+      "A full-stack elderly care platform connecting families abroad with elderly parents and caregivers through health monitoring, alerts, task management, and secure communication.",
     githubUrl:
-      "https://github.com/SamniHasnath/Project_Learning-12-OwnAPI-PRACTICE-APP",
+      "https://github.com/SamniHasnath/FamilyCare-Univercity-Project.git",
     demoUrl: "#",
   },
-  {
-    id: 23,
-    title: "Blog Application",
-    category: "Full Stack",
-    type: "Personal",
-    tags: ["NODE.JS", "EXPRESS", "EJS"],
-    emoji: "✍️",
-    description:
-      "Simple full-stack blog application built with Node.js, Express, and EJS, allowing users to create, edit, and delete posts through a clean, responsive UI.",
-    githubUrl:
-      "https://github.com/SamniHasnath/Project_Learning-08-Blog_Application",
-    demoUrl: "#",
-  },
-  {
-    id: 24,
+    {
+    id: 14,
     title: "QR Code Generator",
     category: "Full Stack",
     type: "Personal",
@@ -338,11 +325,11 @@ const projects = [
     description:
       "Beginner-friendly Node.js application that generates QR code images from user-entered text or URLs.",
     githubUrl:
-      "https://github.com/SamniHasnath/Project_Learning-06-QRcode-Generator",
+      "https://github.com/SamniHasnath/Project_Learning-06-QRcode-Generator.git",
     demoUrl: "#",
   },
   {
-    id: 26,
+    id: 15,
     title: "Quran Website",
     category: "Full Stack",
     type: "Personal",
@@ -351,11 +338,11 @@ const projects = [
     description:
       "A website for reading and navigating the Quran, built with JavaScript.",
     githubUrl:
-      "https://github.com/SamniHasnath/Project-Learning-27_Quran_Website",
+      "https://github.com/SamniHasnath/Project-Learning-27_Quran_Website.git",
     demoUrl: "#",
   },
   {
-    id: 27,
+    id: 16,
     title: "Full Stack Dev Guide App",
     category: "Full Stack",
     type: "Personal",
