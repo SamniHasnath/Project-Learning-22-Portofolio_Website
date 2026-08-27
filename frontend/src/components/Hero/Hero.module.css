@@ -91,8 +91,8 @@
   gap: 8px;
   padding: 14px 28px;
   border-radius: 999px;
-  background: linear-gradient(135deg, #2563eb, #7c3aed);
-  color: #ffffff;
+  background: linear-gradient(135deg, #c9a877, #a8622f);
+  color: #1f150d;
   font-weight: 600;
   font-size: 14px;
   text-decoration: none;
@@ -105,7 +105,7 @@
 .btnPrimary:focus-visible {
   opacity: 0.9;
   transform: translateY(-2px);
-  box-shadow: 0 12px 28px rgba(37, 99, 235, 0.3);
+  box-shadow: 0 12px 28px rgba(168, 98, 47, 0.35);
 }
 
 .btnSecondary {
@@ -148,7 +148,7 @@
   width: 280px;
   height: 280px;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(99, 102, 241, 0.2) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(201, 168, 119, 0.22) 0%, transparent 70%);
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -161,13 +161,13 @@
   border-radius: 50%;
   border: 2px solid var(--c-border-dark);
   position: relative;
-  box-shadow: 0 0 60px rgba(99, 102, 241, 0.1);
+  box-shadow: 0 0 60px rgba(201, 168, 119, 0.15);
   overflow: hidden;
   transition: box-shadow 0.35s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .photo:hover {
-  box-shadow: 0 0 80px rgba(99, 102, 241, 0.22);
+  box-shadow: 0 0 80px rgba(201, 168, 119, 0.3);
 }
 
 .photoImg {
