@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { ExternalLink, ShieldCheck, ChevronDown, ChevronUp } from 'lucide-react';
+import styles from './Certification.module.css';
 
 const CERTS_INITIAL_COUNT = 6;
 const ACHIEVEMENTS_INITIAL_COUNT = 3;
@@ -130,47 +131,25 @@ const achievements = [
 
 function CertCard({ cert }) {
   return (
-    <div style={{
-      background: 'var(--c-card)', border: '1px solid var(--c-border)',
-      borderRadius: '16px', overflow: 'hidden', transition: 'border-color 0.2s, transform 0.2s',
-    }}
-      onMouseEnter={e => {
-        e.currentTarget.style.borderColor = 'var(--c-border-hover)';
-        e.currentTarget.style.transform = 'translateY(-3px)';
-      }}
-      onMouseLeave={e => {
-        e.currentTarget.style.borderColor = 'var(--c-border)';
-        e.currentTarget.style.transform = 'translateY(0)';
-      }}
-    >
+    <div className={styles.card}>
       {/* Banner — always dark for visual contrast */}
-      <div style={{
-        height: '72px', background: cert.bannerBg,
-        display: 'flex', alignItems: 'center',
-        justifyContent: 'space-between', padding: '0 20px',
-      }}>
-        <span style={{
-          fontSize: '11px', fontWeight: '700', color: cert.color,
-          letterSpacing: '2px', textTransform: 'uppercase',
-        }}>
+      <div className={styles.banner} style={{ background: cert.bannerBg }}>
+        <span className={styles.category} style={{ color: cert.color }}>
           {cert.category}
         </span>
         <ShieldCheck size={28} color={cert.color} strokeWidth={1.5} />
       </div>
 
       {/* Content */}
-      <div style={{ padding: '20px 20px 24px' }}>
-        <h3 style={{
-          fontSize: '17px', fontWeight: '700', color: 'var(--c-text)',
-          marginBottom: '6px', lineHeight: '1.3',
-        }}>
+      <div className={styles.cardBody}>
+        <h3 className={styles.certTitle}>
           {cert.title}
         </h3>
-        <p style={{ color: 'var(--c-text-2)', fontSize: '13px', marginBottom: '16px' }}>
+        <p className={styles.issuer}>
           {cert.issuer}
         </p>
         {cert.date && (
-          <span style={{ fontSize: '12px', color: 'var(--c-text-3)', fontWeight: '600' }}>
+          <span className={styles.date}>
             Issued {cert.date}
           </span>
         )}
@@ -189,79 +168,38 @@ export default function Certification() {
   const hasMoreAchievements = achievements.length > ACHIEVEMENTS_INITIAL_COUNT;
 
   return (
-    <section id="certifications" className="sec" style={{
-      padding: '100px 24px', background: 'var(--c-bg)',
-      borderTop: '1px solid var(--c-border)',
-    }}>
-      <div style={{ maxWidth: '1100px', margin: '0 auto' }}>
-        <div className="reveal" style={{ textAlign: 'center', marginBottom: '60px' }}>
-          <p style={{
-            color: 'var(--c-accent)', fontSize: '12px', fontWeight: '700',
-            letterSpacing: '4px', textTransform: 'uppercase', marginBottom: '16px',
-          }}>
+    <section id="certifications" className={`sec ${styles.section}`}>
+      <div className={styles.inner}>
+        <div className={`reveal ${styles.header}`}>
+          <p className={styles.eyebrow}>
             Credentials
           </p>
-          <h2 style={{
-            fontSize: 'clamp(28px, 4vw, 46px)', fontWeight: '800',
-            color: 'var(--c-text)', marginBottom: '16px',
-          }}>
+          <h2 className={styles.title}>
             Certifications &amp; Courses
           </h2>
-          <p style={{ color: 'var(--c-text-2)', fontSize: '15px', maxWidth: '480px', margin: '0 auto 24px' }}>
+          <p className={styles.subtitle}>
             Continuous learning through industry-recognized programs and hands-on projects.
           </p>
           <a
             href="https://www.linkedin.com/in/samni-hasnath03/details/certifications/"
             target="_blank" rel="noopener noreferrer"
-            style={{
-              display: 'inline-flex', alignItems: 'center', gap: '8px',
-              padding: '12px 24px', borderRadius: '12px',
-              background: 'var(--c-card)', border: '1px solid var(--c-border)',
-              color: 'var(--c-text)', fontWeight: '600', fontSize: '14px',
-              textDecoration: 'none', transition: 'border-color 0.2s, transform 0.2s',
-            }}
-            onMouseEnter={e => {
-              e.currentTarget.style.borderColor = 'var(--c-border-hover)';
-              e.currentTarget.style.transform = 'translateY(-2px)';
-            }}
-            onMouseLeave={e => {
-              e.currentTarget.style.borderColor = 'var(--c-border)';
-              e.currentTarget.style.transform = 'translateY(0)';
-            }}
+            className={styles.linkBtn}
           >
             View All on LinkedIn <ExternalLink size={15} />
           </a>
         </div>
 
-        <div className="reveal reveal-grid" style={{
-          display: 'grid',
-          gridTemplateColumns: 'repeat(auto-fit, minmax(min(320px, 100%), 1fr))',
-          gap: '20px',
-        }}>
+        <div className={`reveal reveal-grid ${styles.grid}`}>
           {visibleCerts.map((cert) => (
             <CertCard key={cert.title} cert={cert} />
           ))}
         </div>
 
         {hasMoreCerts && (
-          <div style={{ textAlign: 'center', marginTop: '48px' }}>
+          <div className={styles.moreWrap}>
             <button
               onClick={() => setShowAllCerts(!showAllCerts)}
-              style={{
-                display: 'inline-flex', alignItems: 'center', gap: '8px',
-                padding: '14px 32px', borderRadius: '12px',
-                background: 'var(--c-card)', border: '1px solid var(--c-border)',
-                color: 'var(--c-text)', fontWeight: '600', fontSize: '14px',
-                cursor: 'pointer', transition: 'border-color 0.2s, transform 0.2s',
-              }}
-              onMouseEnter={e => {
-                e.currentTarget.style.borderColor = 'var(--c-border-hover)';
-                e.currentTarget.style.transform = 'translateY(-2px)';
-              }}
-              onMouseLeave={e => {
-                e.currentTarget.style.borderColor = 'var(--c-border)';
-                e.currentTarget.style.transform = 'translateY(0)';
-              }}
+              className={styles.moreBtn}
             >
               {showAllCerts ? (
                 <><ChevronUp size={16} /> Show Less</>
@@ -273,53 +211,29 @@ export default function Certification() {
         )}
 
         {/* Achievements & Activities */}
-        <div id="achievements" className="reveal" style={{ textAlign: 'center', margin: '90px 0 50px', scrollMarginTop: '90px' }}>
-          <p style={{
-            color: 'var(--c-accent-2)', fontSize: '12px', fontWeight: '700',
-            letterSpacing: '4px', textTransform: 'uppercase', marginBottom: '16px',
-          }}>
+        <div id="achievements" className={`reveal ${styles.achievementsHeader}`}>
+          <p className={styles.eyebrowAlt}>
             Recognition
           </p>
-          <h3 style={{
-            fontSize: 'clamp(24px, 3.4vw, 38px)', fontWeight: '800',
-            color: 'var(--c-text)', marginBottom: '16px',
-          }}>
+          <h3 className={styles.titleSm}>
             Achievements &amp; Activities
           </h3>
-          <p style={{ color: 'var(--c-text-2)', fontSize: '15px', maxWidth: '480px', margin: '0 auto' }}>
+          <p className={styles.subtitleNoBtn}>
             Competitions, design contributions, and community recognitions.
           </p>
         </div>
 
-        <div className="reveal reveal-grid" style={{
-          display: 'grid',
-          gridTemplateColumns: 'repeat(auto-fit, minmax(min(320px, 100%), 1fr))',
-          gap: '20px',
-        }}>
+        <div className={`reveal reveal-grid ${styles.grid}`}>
           {visibleAchievements.map((cert) => (
             <CertCard key={cert.title} cert={cert} />
           ))}
         </div>
 
         {hasMoreAchievements && (
-          <div style={{ textAlign: 'center', marginTop: '48px' }}>
+          <div className={styles.moreWrap}>
             <button
               onClick={() => setShowAllAchievements(!showAllAchievements)}
-              style={{
-                display: 'inline-flex', alignItems: 'center', gap: '8px',
-                padding: '14px 32px', borderRadius: '12px',
-                background: 'var(--c-card)', border: '1px solid var(--c-border)',
-                color: 'var(--c-text)', fontWeight: '600', fontSize: '14px',
-                cursor: 'pointer', transition: 'border-color 0.2s, transform 0.2s',
-              }}
-              onMouseEnter={e => {
-                e.currentTarget.style.borderColor = 'var(--c-border-hover)';
-                e.currentTarget.style.transform = 'translateY(-2px)';
-              }}
-              onMouseLeave={e => {
-                e.currentTarget.style.borderColor = 'var(--c-border)';
-                e.currentTarget.style.transform = 'translateY(0)';
-              }}
+              className={styles.moreBtn}
             >
               {showAllAchievements ? (
                 <><ChevronUp size={16} /> Show Less</>
