@@ -1,4 +1,5 @@
 import { Mail } from 'lucide-react';
+import styles from './Footer.module.css';
 
 const GithubIcon = () => (
   <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
@@ -20,40 +21,30 @@ const socials = [
 
 export default function Footer() {
   return (
-    <footer style={{ background: 'var(--c-bg)', borderTop: '1px solid var(--c-border)' }}>
-      <div className="footer-inner" style={{ maxWidth: '1100px', margin: '0 auto', padding: '48px 32px' }}>
-        <div style={{
-          display: 'flex', flexWrap: 'wrap', alignItems: 'center',
-          justifyContent: 'space-between', gap: '32px', marginBottom: '32px',
-        }}>
+    <footer className={styles.footer}>
+      <div className={`footer-inner ${styles.inner}`}>
+        <div className={styles.top}>
           <div>
-            <a href="#home" style={{
-              fontSize: '22px', fontWeight: '800', color: 'var(--c-accent)',
-              textDecoration: 'none', display: 'block', marginBottom: '8px',
-            }}>
+            <a href="#home" className={styles.brand}>
               Samni Hasnath
             </a>
-            <p style={{ color: 'var(--c-text-3)', fontSize: '13px', maxWidth: '280px', lineHeight: '1.7' }}>
+            <p className={styles.tagline}>
               Designing and developing professional digital experiences with a focus on data and performance.
             </p>
           </div>
-          <div style={{ display: 'flex', alignItems: 'center', gap: '20px' }}>
+          <div className={styles.socials}>
             {socials.map((social) => (
               <a key={social.label} href={social.href} aria-label={social.label}
                 target="_blank" rel="noopener noreferrer"
-                style={{ color: 'var(--c-text-3)', textDecoration: 'none', transition: 'color 0.2s' }}
-                onMouseEnter={e => (e.currentTarget.style.color = 'var(--c-text)')}
-                onMouseLeave={e => (e.currentTarget.style.color = 'var(--c-text-3)')}
+                className={styles.socialLink}
               >
                 {social.icon}
               </a>
             ))}
           </div>
         </div>
-        <div style={{
-          paddingTop: '24px', borderTop: '1px solid var(--c-border)', textAlign: 'center',
-        }}>
-          <p style={{ color: 'var(--c-text-4)', fontSize: '13px' }}>
+        <div className={styles.bottom}>
+          <p className={styles.copyright}>
             © {new Date().getFullYear()} Samni Hasnath. All rights reserved. Built with React &amp; Tailwind CSS.
           </p>
         </div>
