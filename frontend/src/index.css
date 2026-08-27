@@ -292,7 +292,7 @@ body {
 
 /* ── Project flip cards ── */
 .project-card {
-  height: 480px;
+  height: 420px;
   perspective: 1800px;
   cursor: pointer;
   transition: transform 0.2s ease;
@@ -326,7 +326,7 @@ body {
 }
 
 @media (max-width: 480px) {
-  .project-card { height: 540px; }
+  .project-card { height: 440px; }
 }
 
 @media (prefers-reduced-motion: reduce) {
