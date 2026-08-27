@@ -139,8 +139,8 @@
 
 .submitBtn {
   padding: 16px;
-  background: linear-gradient(135deg, #2563eb, #7c3aed);
-  color: #ffffff;
+  background: linear-gradient(135deg, #c9a877, #a8622f);
+  color: #1f150d;
   border: none;
   border-radius: 12px;
   font-weight: 700;
@@ -160,7 +160,7 @@
 .submitBtn:focus-visible:not(:disabled) {
   opacity: 0.9;
   transform: translateY(-2px);
-  box-shadow: 0 12px 28px rgba(37, 99, 235, 0.3);
+  box-shadow: 0 12px 28px rgba(168, 98, 47, 0.35);
 }
 
 .submitBtn:focus-visible {
