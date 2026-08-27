@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { ExternalLink, ShieldCheck, ChevronDown, ChevronUp } from 'lucide-react';
 
 const CERTS_INITIAL_COUNT = 6;
+const ACHIEVEMENTS_INITIAL_COUNT = 3;
 
 const certs = [
   {
@@ -84,11 +85,18 @@ const certs = [
     color: '#f472b6',
     bannerBg: 'linear-gradient(135deg, #2a1020, #1a0a15)',
   },
+  {
+    title: 'Cybersecurity Training',
+    issuer: 'APAC Cybersecurity Fund, Sri Lanka',
+    category: 'CYBERSECURITY',
+    color: '#ef4444',
+    bannerBg: 'linear-gradient(135deg, #2a1010, #1a0808)',
+  },
 ];
 
 const achievements = [
   {
-    title: 'IEEEXtreme 19.0 — Team PixelPioneers',
+    title: 'IEEEXtreme 19.0 - Team PixelPioneers',
     issuer: 'IEEE',
     category: 'COMPETITIVE PROGRAMMING',
     color: '#fb923c',
@@ -103,12 +111,20 @@ const achievements = [
     bannerBg: 'linear-gradient(135deg, #0d2030, #081520)',
   },
   {
-    title: 'IEEE Day Celebration 2025 — Design Team',
+    title: 'IEEE Day Celebration 2025 - Design Team',
     issuer: 'IEEE Student Branch, SUSL',
     date: '2025',
     category: 'EVENT DESIGN',
     color: '#facc15',
     bannerBg: 'linear-gradient(135deg, #1a1a08, #101008)',
+  },
+  {
+    title: 'Aurelia 2.0 - IEEE WIE Day 2026 - Program Team',
+    issuer: 'IEEE Student Branch, SUSL',
+    date: '2026',
+    category: 'EVENT MANAGEMENT',
+    color: '#a78bfa',
+    bannerBg: 'linear-gradient(135deg, #1e1535, #110c24)',
   },
 ];
 
@@ -167,6 +183,10 @@ export default function Certification() {
   const [showAllCerts, setShowAllCerts] = useState(false);
   const visibleCerts = showAllCerts ? certs : certs.slice(0, CERTS_INITIAL_COUNT);
   const hasMoreCerts = certs.length > CERTS_INITIAL_COUNT;
+
+  const [showAllAchievements, setShowAllAchievements] = useState(false);
+  const visibleAchievements = showAllAchievements ? achievements : achievements.slice(0, ACHIEVEMENTS_INITIAL_COUNT);
+  const hasMoreAchievements = achievements.length > ACHIEVEMENTS_INITIAL_COUNT;
 
   return (
     <section id="certifications" className="sec" style={{
@@ -276,10 +296,39 @@ export default function Certification() {
           gridTemplateColumns: 'repeat(auto-fit, minmax(min(320px, 100%), 1fr))',
           gap: '20px',
         }}>
-          {achievements.map((cert) => (
+          {visibleAchievements.map((cert) => (
             <CertCard key={cert.title} cert={cert} />
           ))}
         </div>
+
+        {hasMoreAchievements && (
+          <div style={{ textAlign: 'center', marginTop: '48px' }}>
+            <button
+              onClick={() => setShowAllAchievements(!showAllAchievements)}
+              style={{
+                display: 'inline-flex', alignItems: 'center', gap: '8px',
+                padding: '14px 32px', borderRadius: '12px',
+                background: 'var(--c-card)', border: '1px solid var(--c-border)',
+                color: 'var(--c-text)', fontWeight: '600', fontSize: '14px',
+                cursor: 'pointer', transition: 'border-color 0.2s, transform 0.2s',
+              }}
+              onMouseEnter={e => {
+                e.currentTarget.style.borderColor = 'var(--c-border-hover)';
+                e.currentTarget.style.transform = 'translateY(-2px)';
+              }}
+              onMouseLeave={e => {
+                e.currentTarget.style.borderColor = 'var(--c-border)';
+                e.currentTarget.style.transform = 'translateY(0)';
+              }}
+            >
+              {showAllAchievements ? (
+                <><ChevronUp size={16} /> Show Less</>
+              ) : (
+                <><ChevronDown size={16} /> View All Achievements ({achievements.length})</>
+              )}
+            </button>
+          </div>
+        )}
       </div>
     </section>
   );
