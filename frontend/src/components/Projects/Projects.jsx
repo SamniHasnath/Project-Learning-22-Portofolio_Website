@@ -89,7 +89,7 @@ const projects = [
     tags: ['REACT', 'NODE.JS', 'EXPRESS', 'POSTGRESQL'],
     emoji: '📚',
     description: 'Personal reading journal app that lets users log books, write notes, and rate reads — with cover images fetched from the Open Library API.',
-    githubUrl: 'https://github.com/SamniHasnath/book-notes-app',
+    githubUrl: 'https://github.com/SamniHasnath/Project_Learning-17-Book-Notes-Web-App.git',
     demoUrl: '#',
   },
       {
