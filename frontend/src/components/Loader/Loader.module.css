@@ -2,7 +2,7 @@
   position: fixed;
   inset: 0;
   z-index: 9999;
-  background: #09090d;
+  background: #150e09;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -22,7 +22,7 @@
   width: 320px;
   height: 320px;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(99, 102, 241, 0.15) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(201, 168, 119, 0.18) 0%, transparent 70%);
   pointer-events: none;
 }
 
@@ -37,7 +37,7 @@
   position: absolute;
   inset: 0;
   border-radius: 50%;
-  border: 3px solid #1e1e2e;
+  border: 3px solid #33251a;
 }
 
 .arc {
@@ -45,8 +45,8 @@
   inset: 0;
   border-radius: 50%;
   border: 3px solid transparent;
-  border-top-color: #60a5fa;
-  border-right-color: #a78bfa;
+  border-top-color: #c9a877;
+  border-right-color: #a8622f;
   animation: spin 1s linear infinite;
 }
 
@@ -58,7 +58,7 @@
   justify-content: center;
   font-size: 32px;
   font-weight: 900;
-  background: linear-gradient(135deg, #60a5fa, #a78bfa);
+  background: linear-gradient(135deg, #c9a877, #a8622f);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   letter-spacing: -1px;
@@ -66,7 +66,7 @@
 }
 
 .name {
-  color: #4b5563;
+  color: #a9927a;
   font-size: 11px;
   letter-spacing: 5px;
   text-transform: uppercase;
