@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Mail, MapPin, Send } from 'lucide-react';
 import { createRipple } from '../../utils/ripple';
+import styles from './Contact.module.css';
 
 const LinkedinIcon = () => (
   <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
@@ -41,73 +42,38 @@ export default function Contact() {
     } catch { setStatus('error'); }
   };
 
-  const fieldStyle = {
-    width: '100%', padding: '14px 16px',
-    background: 'var(--c-input)', border: '1px solid var(--c-border-md)',
-    borderRadius: '12px', color: 'var(--c-text)', fontSize: '14px',
-    outline: 'none', boxSizing: 'border-box', transition: 'border-color 0.2s', fontFamily: 'inherit',
-  };
-
   return (
-    <section id="contact" className="sec" style={{
-      padding: '100px 24px', background: 'var(--c-bg)',
-      borderTop: '1px solid var(--c-border)',
-    }}>
-      <div className="reveal" style={{
-        maxWidth: '1100px', margin: '0 auto',
-        display: 'grid',
-        gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
-        gap: '60px', alignItems: 'start',
-      }}>
+    <section id="contact" className={`sec ${styles.section}`}>
+      <div className={`reveal ${styles.inner}`}>
         {/* Left — Info */}
         <div>
-          <p style={{
-            color: 'var(--c-accent)', fontSize: '12px', fontWeight: '700',
-            letterSpacing: '4px', textTransform: 'uppercase', marginBottom: '16px',
-          }}>
+          <p className={styles.eyebrow}>
             Contact Me
           </p>
-          <h2 style={{
-            fontSize: 'clamp(28px, 4vw, 42px)', fontWeight: '800',
-            color: 'var(--c-text)', lineHeight: '1.2', marginBottom: '16px',
-          }}>
+          <h2 className={styles.heading}>
             Let's work together<br />on your next project
           </h2>
-          <p style={{ color: 'var(--c-text-2)', lineHeight: '1.8', marginBottom: '36px', maxWidth: '380px' }}>
+          <p className={styles.lead}>
             I'm always open to discussing new projects, creative ideas or
             opportunities to be part of your visions.
           </p>
 
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
+          <div className={styles.infoList}>
             {contactInfo.map((info) => (
-              <div key={info.label} style={{ display: 'flex', alignItems: 'center', gap: '16px' }}>
-                <div style={{
-                  width: '48px', height: '48px', borderRadius: '12px',
-                  background: 'var(--c-card)', border: '1px solid var(--c-border)',
-                  display: 'flex', alignItems: 'center', justifyContent: 'center',
-                  flexShrink: 0, color: 'var(--c-accent)',
-                }}>
+              <div key={info.label} className={styles.infoRow}>
+                <div className={styles.infoIcon}>
                   {info.icon}
                 </div>
                 <div>
-                  <p style={{
-                    color: 'var(--c-text-3)', fontSize: '11px', fontWeight: '700',
-                    letterSpacing: '2px', textTransform: 'uppercase', marginBottom: '3px',
-                  }}>
+                  <p className={styles.infoLabel}>
                     {info.label}
                   </p>
                   {info.href ? (
-                    <a href={info.href} style={{
-                      color: 'var(--c-text)', fontWeight: '500', textDecoration: 'none',
-                      transition: 'color 0.2s',
-                    }}
-                      onMouseEnter={e => (e.currentTarget.style.color = 'var(--c-accent)')}
-                      onMouseLeave={e => (e.currentTarget.style.color = 'var(--c-text)')}
-                    >
+                    <a href={info.href} className={styles.infoLink}>
                       {info.value}
                     </a>
                   ) : (
-                    <p style={{ color: 'var(--c-text)', fontWeight: '500' }}>{info.value}</p>
+                    <p className={styles.infoValue}>{info.value}</p>
                   )}
                 </div>
               </div>
@@ -116,48 +82,28 @@ export default function Contact() {
         </div>
 
         {/* Right — Form */}
-        <div style={{
-          background: 'var(--c-card)', border: '1px solid var(--c-border)',
-          borderRadius: '20px', padding: '32px',
-        }}>
-          <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
-            <div className="contact-fields" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '16px' }}>
+        <div className={styles.formCard}>
+          <form onSubmit={handleSubmit} className={styles.form}>
+            <div className={`contact-fields ${styles.fieldsRow}`}>
               <input type="text" name="name" value={form.name} onChange={handleChange}
-                required placeholder="Your Name" style={fieldStyle}
-                onFocus={e => (e.target.style.borderColor = 'var(--c-accent)')}
-                onBlur={e => (e.target.style.borderColor = 'var(--c-border-md)')} />
+                required placeholder="Your Name" className={styles.field} />
               <input type="email" name="email" value={form.email} onChange={handleChange}
-                required placeholder="Email Address" style={fieldStyle}
-                onFocus={e => (e.target.style.borderColor = 'var(--c-accent)')}
-                onBlur={e => (e.target.style.borderColor = 'var(--c-border-md)')} />
+                required placeholder="Email Address" className={styles.field} />
             </div>
             <textarea name="message" value={form.message} onChange={handleChange}
               required rows={6} placeholder="Your Message"
-              style={{ ...fieldStyle, resize: 'none' }}
-              onFocus={e => (e.target.style.borderColor = 'var(--c-accent)')}
-              onBlur={e => (e.target.style.borderColor = 'var(--c-border-md)')} />
-            <button type="submit" disabled={status === 'sending'} className="ripple-host" onClick={createRipple} style={{
-              padding: '16px', background: 'linear-gradient(135deg, #2563eb, #7c3aed)',
-              color: '#ffffff', border: 'none', borderRadius: '12px',
-              fontWeight: '700', fontSize: '14px',
-              cursor: status === 'sending' ? 'not-allowed' : 'pointer',
-              opacity: status === 'sending' ? '0.5' : '1',
-              display: 'inline-flex', alignItems: 'center', justifyContent: 'center', gap: '8px',
-              transition: 'opacity 0.2s', fontFamily: 'inherit',
-            }}
-              onMouseEnter={e => { if (status !== 'sending') e.currentTarget.style.opacity = '0.85'; }}
-              onMouseLeave={e => (e.currentTarget.style.opacity = status === 'sending' ? '0.5' : '1')}
-            >
+              className={`${styles.field} ${styles.textarea}`} />
+            <button type="submit" disabled={status === 'sending'} className={`ripple-host ${styles.submitBtn}`} onClick={createRipple}>
               Send Message <Send size={16} />
             </button>
 
             {status === 'success' && (
-              <p style={{ textAlign: 'center', color: '#34d399', fontSize: '14px', fontWeight: '500' }}>
+              <p className={styles.statusSuccess}>
                 ✅ Message sent successfully!
               </p>
             )}
             {status === 'error' && (
-              <p style={{ textAlign: 'center', color: '#f87171', fontSize: '14px', fontWeight: '500' }}>
+              <p className={styles.statusError}>
                 ❌ Something went wrong. Please try again.
               </p>
             )}
