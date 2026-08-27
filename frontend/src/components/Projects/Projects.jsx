@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { ExternalLink, ChevronDown, ChevronUp, LayoutGrid, Layers, Globe, Database, BarChart2, FolderOpen, LayoutDashboard, Server, Wrench, RotateCw, RotateCcw, Bot, Palette } from 'lucide-react';
+import { ExternalLink, ChevronDown, ChevronUp, LayoutGrid, Layers, Globe, Database, BarChart2, FolderOpen, LayoutDashboard, Server, Wrench, RotateCw, RotateCcw, Bot, Palette, User, Users } from 'lucide-react';
 
 const INITIAL_COUNT = 6;
 
@@ -52,6 +52,12 @@ const CATEGORIES = [
   { label: 'Other',        icon: FolderOpen },
 ];
 
+const TYPES = [
+  { label: 'All',      icon: LayoutGrid },
+  { label: 'Personal', icon: User       },
+  { label: 'Group',    icon: Users      },
+];
+
 const projects = [
   {
     id: 1,
@@ -61,7 +67,7 @@ const projects = [
     tags: ['REACT', 'NODE.JS', 'EXPRESS', 'POSTGRESQL'],
     emoji: '💸',
     description: 'Full stack expense management app with category tracking, monthly summaries, and a clean dashboard built on a PERN stack.',
-    githubUrl: 'https://github.com/SamniHasnath/expense-tracker',
+    githubUrl: 'https://github.com/SamniHasnath/Project_Learning-15-Expense-Tracker-App.git',
     demoUrl: '#',
   },
   {
@@ -72,7 +78,7 @@ const projects = [
     tags: ['REACT', 'NODE.JS', 'EXPRESS', 'POSTGRESQL'],
     emoji: '✈️',
     description: 'Interactive travel log where users can mark visited countries, add trip notes, and visualize their journey on a world map.',
-    githubUrl: 'https://github.com/SamniHasnath/travel-tracker',
+    githubUrl: 'https://github.com/SamniHasnath/Project_Learning-14-Travel-Tracker-App.git',
     demoUrl: '#',
   },
   {
@@ -144,27 +150,16 @@ const projects = [
   },
   {
     id: 18,
-    title: "ShePulse – Women's Wellness App",
+    title: "ShePulse - Women's Wellness App",
     category: 'UI/UX',
     type: 'Group',
     tags: ['FIGMA', 'WIREFRAMING', 'PROTOTYPING'],
     emoji: '💗',
-    description: 'UI specification document for ShePulse, a women\'s wellness app — covering wireframes, interactive prototypes, and a complete design system to guide development.',
+    description: 'UI specification document for ShePulse, a women\'s wellness app - covering wireframes, interactive prototypes, and a complete design system to guide development.',
     githubUrl: '#',
     demoUrl: '#',
   },
-    {
-    id: 10,
-    title: 'Quiz App',
-    category: 'Full Stack',
-    type: 'Personal',
-    tags: ['NODE.JS', 'EXPRESS', 'POSTGRESQL', 'EJS'],
-    emoji: '🧠',
-    description: 'Interactive quiz application with question banks stored in PostgreSQL, score tracking, and a server-rendered frontend.',
-    githubUrl: 'https://github.com/SamniHasnath/quiz-app',
-    demoUrl: '#',
-  },
-    {
+       {
     id: 12,
     title: 'Pipelinehub',
     category: 'Full Stack',
@@ -193,10 +188,77 @@ const projects = [
     type: 'Personal',
     tags: ['C', 'CLI', 'FILE I/O'],
     emoji: '🚌',
-    description: 'Command-line bus ticketing system in C with seat booking, cancellation, and file-based persistence — the project that started it all.',
+    description: 'Command-line bus ticketing system in C with seat booking, cancellation, and file-based persistence - the project that started it all.',
     githubUrl: 'https://github.com/SamniHasnath/bus-reservation-system',
     demoUrl: '#',
   },
+    {
+    id: 20,
+    title: 'Notes App',
+    category: 'Full Stack',
+    type: 'Personal',
+    tags: ['NODE.JS', 'EXPRESS', 'POSTGRESQL'],
+    emoji: '📝',
+    description: 'Notes application with a Node.js/PostgreSQL backend and a responsive frontend, supporting persistent database storage as well as offline browser saving.',
+    githubUrl: 'https://github.com/SamniHasnath/Project_Learning-16-Notes_App',
+    demoUrl: '#',
+  },
+  {
+    id: 21,
+    title: 'Elder Management System',
+    category: 'Full Stack',
+    type: 'Group',
+    tags: ['REACT', 'NODE.JS', 'EXPRESS', 'POSTGRESQL'],
+    emoji: '🏥',
+    description: 'Full-stack Elder Management System for managing elder care records with CRUD operations, featuring a simple, user-friendly dashboard.',
+    githubUrl: 'https://github.com/SamniHasnath/Project_Learning-12-OwnAPI-PRACTICE-APP',
+    demoUrl: '#',
+  },
+    {
+    id: 23,
+    title: 'Blog Application',
+    category: 'Full Stack',
+    type: 'Personal',
+    tags: ['NODE.JS', 'EXPRESS', 'EJS'],
+    emoji: '✍️',
+    description: 'Simple full-stack blog application built with Node.js, Express, and EJS, allowing users to create, edit, and delete posts through a clean, responsive UI.',
+    githubUrl: 'https://github.com/SamniHasnath/Project_Learning-08-Blog_Application',
+    demoUrl: '#',
+  },
+  {
+    id: 24,
+    title: 'QR Code Generator',
+    category: 'Full Stack',
+    type: 'Personal',
+    tags: ['NODE.JS', 'QR API', 'HTML/CSS'],
+    emoji: '🔳',
+    description: 'Beginner-friendly Node.js application that generates QR code images from user-entered text or URLs.',
+    githubUrl: 'https://github.com/SamniHasnath/Project_Learning-06-QRcode-Generator',
+    demoUrl: '#',
+  },
+    {
+    id: 26,
+    title: 'Quran Website',
+    category: 'Full Stack',
+    type: 'Personal',
+    tags: ['JAVASCRIPT', 'HTML/CSS'],
+    emoji: '📖',
+    description: 'A website for reading and navigating the Quran, built with JavaScript.',
+    githubUrl: 'https://github.com/SamniHasnath/Project-Learning-27_Quran_Website',
+    demoUrl: '#',
+  },
+  {
+    id: 27,
+    title: 'Full Stack Dev Guide App',
+    category: 'Full Stack',
+    type: 'Personal',
+    tags: ['HTML/CSS', 'JAVASCRIPT'],
+    emoji: '📘',
+    description: 'A full-stack development guide app compiling learning resources and references for aspiring developers.',
+    githubUrl: 'https://github.com/SamniHasnath/Project-Learning-26-FullStack-dev-Guide-App',
+    demoUrl: '#',
+  },
+   
 ];
 
 function ProjectCard({ project }) {
@@ -370,17 +432,23 @@ function ProjectCard({ project }) {
 
 export default function Projects() {
   const [activeCategory, setActiveCategory] = useState('All');
+  const [activeType, setActiveType] = useState('All');
   const [showAll, setShowAll] = useState(false);
 
-  const filtered = activeCategory === 'All'
-    ? projects
-    : projects.filter(p => p.category === activeCategory);
+  const filtered = projects
+    .filter(p => activeCategory === 'All' || p.category === activeCategory)
+    .filter(p => activeType === 'All' || p.type === activeType);
 
   const visible = showAll ? filtered : filtered.slice(0, INITIAL_COUNT);
   const hasMore = filtered.length > INITIAL_COUNT;
 
   const handleCategoryChange = (cat) => {
     setActiveCategory(cat);
+    setShowAll(false);
+  };
+
+  const handleTypeChange = (type) => {
+    setActiveType(type);
     setShowAll(false);
   };
 
@@ -425,6 +493,55 @@ export default function Projects() {
               <button
                 key={label}
                 onClick={() => handleCategoryChange(label)}
+                style={{
+                  display: 'inline-flex', alignItems: 'center', gap: '7px',
+                  padding: '9px 16px', borderRadius: '10px',
+                  border: 'none',
+                  background: isActive ? 'var(--c-accent)' : 'transparent',
+                  color: isActive ? '#fff' : 'var(--c-text-2)',
+                  fontSize: '13px', fontWeight: '600',
+                  cursor: 'pointer',
+                  transition: 'all 0.2s',
+                  whiteSpace: 'nowrap',
+                }}
+                onMouseEnter={e => {
+                  if (!isActive) e.currentTarget.style.background = 'var(--c-bg)';
+                }}
+                onMouseLeave={e => {
+                  if (!isActive) e.currentTarget.style.background = 'transparent';
+                }}
+              >
+                <Icon size={14} />
+                {label}
+                <span style={{
+                  fontSize: '11px', fontWeight: '700',
+                  background: isActive ? 'rgba(255,255,255,0.2)' : 'var(--c-bg)',
+                  color: isActive ? '#fff' : 'var(--c-text-2)',
+                  borderRadius: '6px', padding: '1px 6px',
+                  minWidth: '20px', textAlign: 'center',
+                  transition: 'all 0.2s',
+                }}>
+                  {count}
+                </span>
+              </button>
+            );
+          })}
+        </div>
+
+        {/* Type Filter Tabs */}
+        <div className="reveal" style={{
+          display: 'flex', flexWrap: 'wrap', gap: '8px', marginBottom: '48px',
+          padding: '6px', background: 'var(--c-card)',
+          border: '1px solid var(--c-border)', borderRadius: '16px',
+          width: 'fit-content',
+        }}>
+          {TYPES.map(({ label, icon: Icon }) => {
+            const isActive = activeType === label;
+            const count = label === 'All' ? projects.length : projects.filter(p => p.type === label).length;
+            return (
+              <button
+                key={label}
+                onClick={() => handleTypeChange(label)}
                 style={{
                   display: 'inline-flex', alignItems: 'center', gap: '7px',
                   padding: '9px 16px', borderRadius: '10px',
