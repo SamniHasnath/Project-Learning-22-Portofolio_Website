@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { LayoutDashboard, Server, Database, PieChart, Wrench, Cloud, Palette, PenTool, ChevronDown, ChevronUp } from 'lucide-react';
+import styles from './Skills.module.css';
 
 const INITIAL_COUNT = 6;
 
@@ -21,49 +22,27 @@ export default function Skills() {
   const hasMore = skillGroups.length > INITIAL_COUNT;
 
   return (
-    <section id="skills" className="sec" style={{
-      padding: '100px 24px', background: 'var(--c-bg)',
-      borderTop: '1px solid var(--c-border)',
-    }}>
-      <div style={{ maxWidth: '1100px', margin: '0 auto' }}>
-        <div className="reveal" style={{ textAlign: 'center', marginBottom: '60px' }}>
-          <p style={{
-            color: 'var(--c-accent)', fontSize: '12px', fontWeight: '700',
-            letterSpacing: '4px', textTransform: 'uppercase', marginBottom: '16px',
-          }}>
+    <section id="skills" className={`sec ${styles.section}`}>
+      <div className={styles.inner}>
+        <div className={`reveal ${styles.header}`}>
+          <p className={styles.eyebrow}>
             My Expertise
           </p>
-          <h2 style={{
-            fontSize: 'clamp(28px, 4vw, 46px)', fontWeight: '800', color: 'var(--c-text)',
-          }}>
+          <h2 className={styles.title}>
             Technologies I Work With
           </h2>
         </div>
 
-        <div className="reveal reveal-grid" style={{
-          display: 'grid',
-          gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
-          gap: '20px',
-        }}>
+        <div className={`reveal reveal-grid ${styles.grid}`}>
           {visible.map(({ Icon, title, tags }) => (
-            <div key={title} style={{
-              background: 'var(--c-card)', border: '1px solid var(--c-border)',
-              borderRadius: '16px', padding: '24px', transition: 'border-color 0.2s',
-            }}
-              onMouseEnter={e => (e.currentTarget.style.borderColor = 'var(--c-border-hover)')}
-              onMouseLeave={e => (e.currentTarget.style.borderColor = 'var(--c-border)')}
-            >
-              <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '20px' }}>
+            <div key={title} className={styles.card}>
+              <div className={styles.cardHead}>
                 <Icon size={22} color="var(--c-accent)" />
-                <h3 style={{ color: 'var(--c-text)', fontWeight: '700', fontSize: '17px' }}>{title}</h3>
+                <h3 className={styles.cardTitle}>{title}</h3>
               </div>
-              <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px' }}>
+              <div className={styles.tags}>
                 {tags.map((tag) => (
-                  <span key={tag} style={{
-                    padding: '6px 14px', borderRadius: '999px',
-                    background: 'var(--c-input)', border: '1px solid var(--c-border-md)',
-                    color: 'var(--c-text-2)', fontSize: '13px',
-                  }}>
+                  <span key={tag} className={styles.tag}>
                     {tag}
                   </span>
                 ))}
@@ -73,24 +52,10 @@ export default function Skills() {
         </div>
 
         {hasMore && (
-          <div style={{ textAlign: 'center', marginTop: '48px' }}>
+          <div className={styles.moreWrap}>
             <button
               onClick={() => setShowAll(!showAll)}
-              style={{
-                display: 'inline-flex', alignItems: 'center', gap: '8px',
-                padding: '14px 32px', borderRadius: '12px',
-                background: 'var(--c-card)', border: '1px solid var(--c-border)',
-                color: 'var(--c-text)', fontWeight: '600', fontSize: '14px',
-                cursor: 'pointer', transition: 'border-color 0.2s, transform 0.2s',
-              }}
-              onMouseEnter={e => {
-                e.currentTarget.style.borderColor = 'var(--c-border-hover)';
-                e.currentTarget.style.transform = 'translateY(-2px)';
-              }}
-              onMouseLeave={e => {
-                e.currentTarget.style.borderColor = 'var(--c-border)';
-                e.currentTarget.style.transform = 'translateY(0)';
-              }}
+              className={styles.moreBtn}
             >
               {showAll ? (
                 <><ChevronUp size={16} /> Show Less</>
