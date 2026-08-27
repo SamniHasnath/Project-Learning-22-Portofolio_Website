@@ -1,0 +1,115 @@
+.section {
+  padding: 100px 24px;
+  background: var(--c-bg);
+  border-top: 1px solid var(--c-border);
+}
+
+.inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 64px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.photo {
+  flex-shrink: 0;
+  width: 300px;
+  height: 380px;
+  border-radius: 20px;
+  border: 1px solid var(--c-border);
+  overflow: hidden;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+  transition: box-shadow 0.35s cubic-bezier(0.16, 1, 0.3, 1), transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.photo:hover {
+  box-shadow: 0 28px 72px rgba(0, 0, 0, 0.22);
+  transform: translateY(-4px);
+}
+
+.photoImg {
+  width: 100%;
+  height: 200%;
+  object-fit: cover;
+  display: block;
+}
+
+.content {
+  flex: 1;
+  min-width: 280px;
+  max-width: 520px;
+}
+
+.eyebrow {
+  color: var(--c-accent);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+}
+
+.heading {
+  font-size: clamp(28px, 4vw, 46px);
+  font-weight: 800;
+  color: var(--c-text);
+  line-height: 1.2;
+  margin-bottom: 8px;
+}
+
+.headingMuted {
+  font-size: clamp(28px, 4vw, 46px);
+  font-weight: 800;
+  color: var(--c-text-3);
+  line-height: 1.2;
+  margin-bottom: 28px;
+}
+
+.paragraph {
+  color: var(--c-text-2);
+  line-height: 1.8;
+  margin-bottom: 16px;
+}
+
+.paragraphLast {
+  color: var(--c-text-2);
+  line-height: 1.8;
+  margin-bottom: 36px;
+}
+
+.statsGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+
+.statCard {
+  background: var(--c-card);
+  border: 1px solid var(--c-border);
+  border-radius: 16px;
+  padding: 16px;
+  transition: border-color 0.25s cubic-bezier(0.16, 1, 0.3, 1), transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.statCard:hover {
+  border-color: var(--c-border-hover);
+  transform: translateY(-3px);
+}
+
+.statValue {
+  font-size: 24px;
+  font-weight: 800;
+  margin-bottom: 4px;
+}
+
+.statLabel {
+  font-size: 10px;
+  color: var(--c-text-2);
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  word-break: break-word;
+}
